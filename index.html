@@ -17,40 +17,80 @@
       <p>
         <label for="def"
           >Defence:
-          <input id="def" type="number" min="0" max="252" placeholder="0-252"
+          <input
+            id="def"
+            oninput="maxLengthCheck(this)"
+            maxlength="3"
+            type="number"
+            min="0"
+            max="252"
+            placeholder="0-252"
         /></label>
       </p>
       <p>
         <label for="spd"
           >Speed:
-          <input id="spd" type="number" min="0" max="252" placeholder="0-252"
+          <input
+            id="spd"
+            oninput="maxLengthCheck(this)"
+            maxlength="3"
+            type="number"
+            min="0"
+            max="252"
+            placeholder="0-252"
         /></label>
       </p>
       <p>
         <label for="atkSp"
           >Attack Special:
-          <input id="atkSp" type="number" min="0" max="252" placeholder="0-252"
+          <input
+            id="atkSp"
+            oninput="maxLengthCheck(this)"
+            maxlength="3"
+            type="number"
+            min="0"
+            max="252"
+            placeholder="0-252"
         /></label>
       </p>
       <p>
         <label for="defSp"
           >Defence Special:
-          <input id="defSp" type="number" min="0" max="252" placeholder="0-252"
+          <input
+            id="defSp"
+            oninput="maxLengthCheck(this)"
+            maxlength="3"
+            type="number"
+            min="0"
+            max="252"
+            placeholder="0-252"
         /></label>
       </p>
       <p>
         <label for="hp"
           >HP:
-          <input id="hp" type="number" min="0" max="252" placeholder="0-252"
+          <input
+            id="hp"
+            oninput="maxLengthCheck(this)"
+            maxlength="3"
+            type="number"
+            min="0"
+            max="252"
+            placeholder="0-252"
         /></label>
       </p>
-      <div id="result"></div>
     </div>
     <p>
       <button onclick="inputs()">Calculate</button>
     </p>
-
+    <div id="result"></div>
     <p>By Airaken</p>
   </body>
+  <script>
+    function maxLengthCheck(input) {
+      if (input.value > 252) input.value = 252;
+      if (input.value < 0) input.value = 0;
+    }
+  </script>
   <script src="handler.js"></script>
 </html>
