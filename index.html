@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Calculador de EVs</h1>
+    <div id="evsList">
+      <p>
+        <label for="atk"
+          >Attack:
+          <input id="atk" type="number" min="0" max="252" placeholder="0-252"
+        /></label>
+      </p>
+      <p>
+        <label for="def"
+          >Defence:
+          <input id="def" type="number" min="0" max="252" placeholder="0-252"
+        /></label>
+      </p>
+      <p>
+        <label for="spd"
+          >Speed:
+          <input id="spd" type="number" min="0" max="252" placeholder="0-252"
+        /></label>
+      </p>
+      <p>
+        <label for="atkSp"
+          >Attack Special:
+          <input id="atkSp" type="number" min="0" max="252" placeholder="0-252"
+        /></label>
+      </p>
+      <p>
+        <label for="defSp"
+          >Defence Special:
+          <input id="defSp" type="number" min="0" max="252" placeholder="0-252"
+        /></label>
+      </p>
+      <p>
+        <label for="hp"
+          >HP:
+          <input id="hp" type="number" min="0" max="252" placeholder="0-252"
+        /></label>
+      </p>
+      <div id="result"></div>
+    </div>
+    <p>
+      <button onclick="inputs()">Calculate</button>
+    </p>
+
+    <p>By Airaken</p>
+  </body>
+  <script src="handler.js"></script>
+</html>
