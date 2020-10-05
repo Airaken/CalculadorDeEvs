@@ -152,10 +152,13 @@ const updateWebinar = (name, stat, webinar, number) => {
       if (number > 1) {
         pokemon.training[stat][webinar].webinarNumber = number - 1;
         alert(
-          `Recuerda aun queda ${parseInt(number - 1)} seminarios de ${webinar}`
+          `Recuerda aun queda ${parseInt(
+            number - 1
+          )} seminarios de ${webinar} para ${stat}`
         );
       } else {
         pokemon.training[stat][webinar] = { ok: false };
+        alert(`Seminario ${webinar} para ${stat} terminado`);
       }
       saveData(name, pokemon.training);
     },
