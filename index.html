@@ -7,11 +7,23 @@
   </head>
   <body>
     <h1>Calculador de EVs</h1>
-    <div id="evsList">
+    <form id="evsList">
+      <p>
+        <label for="name"
+          >Nombre de pokemon: <input id="name" type="text"
+        /></label>
+      </p>
       <p>
         <label for="atk"
           >Attack:
-          <input id="atk" type="number" min="0" max="252" placeholder="0-252"
+          <input
+            id="atk"
+            oninput="maxLengthCheck(this)"
+            maxlength="3"
+            type="number"
+            min="0"
+            max="252"
+            placeholder="0-252"
         /></label>
       </p>
       <p>
@@ -79,18 +91,37 @@
             placeholder="0-252"
         /></label>
       </p>
-    </div>
-    <p>
-      <button onclick="inputs()">Calculate</button>
-    </p>
-    <div id="result"></div>
-    <p>By Airaken</p>
+      <p>
+        <button id="calculate">Calcular y guardar</button>
+      </p>
+      <p>
+        <select name="select" id="select"></select>
+      </p>
+      <p>
+        <button id="update">Cargar y actualizar</button>
+      </p>
+
+      <div id="result"></div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script>
+      const config = {
+        apiKey: "AIzaSyDD9Z3VRv_12ra2O_zn_4bIJrrquAnTLa0",
+        authDomain: "evscalculator.firebaseapp.com",
+        databaseURL: "https://evscalculator.firebaseio.com",
+        projectId: "evscalculator",
+        storageBucket: "evscalculator.appspot.com",
+      };
+      firebase.initializeApp(config);
+      const database = firebase.database();
+    </script>
+    <script>
+      function maxLengthCheck(input) {
+        if (input.value > 252) input.value = 252;
+        if (input.value < 0) input.value = 0;
+      }
+    </script>
+    <script src="handler.js"></script>
   </body>
-  <script>
-    function maxLengthCheck(input) {
-      if (input.value > 252) input.value = 252;
-      if (input.value < 0) input.value = 0;
-    }
-  </script>
-  <script src="handler.js"></script>
 </html>
