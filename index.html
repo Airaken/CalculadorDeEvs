@@ -8,9 +8,9 @@
   </head>
   <body>
     <h1>Calculador de EVs</h1>
-    <div class="container">
-      <div>
-        <form id="evsList">
+    <form id="evsList">
+      <div class="container">
+        <div>
           <p>
             <label for="name"
               >Nombre de pokemon: <input id="name" type="text"
@@ -103,13 +103,14 @@
           <p>
             <button id="update">Cargar y actualizar</button>
           </p>
-        </form>
+        </div>
+        <div>
+          <table id="table"></table>
+        </div>
       </div>
-      <div>
-        <table id="table"></table>
-      </div>
-    </div>
-    <div id="result"></div>
+      <div id="result"></div>
+    </form>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
     <script>
