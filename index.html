@@ -4,105 +4,112 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="StyleSheet" href="style.css" type="text/css" />
   </head>
   <body>
     <h1>Calculador de EVs</h1>
-    <form id="evsList">
-      <p>
-        <label for="name"
-          >Nombre de pokemon: <input id="name" type="text"
-        /></label>
-      </p>
-      <p>
-        <label for="atk"
-          >Attack:
-          <input
-            id="atk"
-            oninput="maxLengthCheck(this)"
-            maxlength="3"
-            type="number"
-            min="0"
-            max="252"
-            placeholder="0-252"
-        /></label>
-      </p>
-      <p>
-        <label for="def"
-          >Defence:
-          <input
-            id="def"
-            oninput="maxLengthCheck(this)"
-            maxlength="3"
-            type="number"
-            min="0"
-            max="252"
-            placeholder="0-252"
-        /></label>
-      </p>
-      <p>
-        <label for="spd"
-          >Speed:
-          <input
-            id="spd"
-            oninput="maxLengthCheck(this)"
-            maxlength="3"
-            type="number"
-            min="0"
-            max="252"
-            placeholder="0-252"
-        /></label>
-      </p>
-      <p>
-        <label for="atkSp"
-          >Attack Special:
-          <input
-            id="atkSp"
-            oninput="maxLengthCheck(this)"
-            maxlength="3"
-            type="number"
-            min="0"
-            max="252"
-            placeholder="0-252"
-        /></label>
-      </p>
-      <p>
-        <label for="defSp"
-          >Defence Special:
-          <input
-            id="defSp"
-            oninput="maxLengthCheck(this)"
-            maxlength="3"
-            type="number"
-            min="0"
-            max="252"
-            placeholder="0-252"
-        /></label>
-      </p>
-      <p>
-        <label for="hp"
-          >HP:
-          <input
-            id="hp"
-            oninput="maxLengthCheck(this)"
-            maxlength="3"
-            type="number"
-            min="0"
-            max="252"
-            placeholder="0-252"
-        /></label>
-      </p>
-      <p>
-        <button id="calculate">Calcular y guardar</button>
-      </p>
-      <p>
-        <select name="select" id="select"></select>
-      </p>
-      <p>
-        <button id="update">Cargar y actualizar</button>
-      </p>
-
-      <div id="result"></div>
-    </form>
+    <div class="container">
+      <div>
+        <form id="evsList">
+          <p>
+            <label for="name"
+              >Nombre de pokemon: <input id="name" type="text"
+            /></label>
+          </p>
+          <p>
+            <label for="atk"
+              >Attack:
+              <input
+                id="atk"
+                oninput="maxLengthCheck(this)"
+                maxlength="3"
+                type="number"
+                min="0"
+                max="252"
+                placeholder="0-252"
+            /></label>
+          </p>
+          <p>
+            <label for="def"
+              >Defence:
+              <input
+                id="def"
+                oninput="maxLengthCheck(this)"
+                maxlength="3"
+                type="number"
+                min="0"
+                max="252"
+                placeholder="0-252"
+            /></label>
+          </p>
+          <p>
+            <label for="spd"
+              >Speed:
+              <input
+                id="spd"
+                oninput="maxLengthCheck(this)"
+                maxlength="3"
+                type="number"
+                min="0"
+                max="252"
+                placeholder="0-252"
+            /></label>
+          </p>
+          <p>
+            <label for="atkSp"
+              >Attack Special:
+              <input
+                id="atkSp"
+                oninput="maxLengthCheck(this)"
+                maxlength="3"
+                type="number"
+                min="0"
+                max="252"
+                placeholder="0-252"
+            /></label>
+          </p>
+          <p>
+            <label for="defSp"
+              >Defence Special:
+              <input
+                id="defSp"
+                oninput="maxLengthCheck(this)"
+                maxlength="3"
+                type="number"
+                min="0"
+                max="252"
+                placeholder="0-252"
+            /></label>
+          </p>
+          <p>
+            <label for="hp"
+              >HP:
+              <input
+                id="hp"
+                oninput="maxLengthCheck(this)"
+                maxlength="3"
+                type="number"
+                min="0"
+                max="252"
+                placeholder="0-252"
+            /></label>
+          </p>
+          <p>
+            <button id="calculate">Calcular y guardar</button>
+          </p>
+          <p>
+            <select name="select" id="select"></select>
+          </p>
+          <p>
+            <button id="update">Cargar y actualizar</button>
+          </p>
+        </form>
+      </div>
+      <div>
+        <table id="table"></table>
+      </div>
+    </div>
+    <div id="result"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
     <script>
