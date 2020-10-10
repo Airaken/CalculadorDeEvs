@@ -1,6 +1,7 @@
 const main = (db) => {
   const data = db.base;
   const register = db.training;
+  showTable(data);
 
   const calculate = (number) => {
     const result = {
@@ -116,6 +117,30 @@ const main = (db) => {
     showUpdate(pokemon.training, name);
     document.getElementById("result").innerHTML;
   });
+};
+
+const orderData = (data) => {
+  let dataSort = [];
+  for (const i in data) {
+    dataSort.push(data[i].evs);
+  }
+  dataSort.sort((a, b) => b - a);
+  for (let i in data) {
+    for (let j in dataSort) {
+      dataSort[j] = dataSort[j] === data[i].evs ? data[i] : dataSort[j];
+    }
+  }
+  return dataSort;
+};
+
+const showTable = (data) => {
+  let text =
+    "<tr><th>Tiempo a escoger</th><th>Tiempo</th><th>Puntos a subir</th></tr>";
+  const dataSort = orderData(data);
+  for (let i in dataSort) {
+    text += `<tr><td>${dataSort[i].name}</td><td>${dataSort[i].time}h</td><td>${dataSort[i].evs} EVs</td></tr>`;
+  }
+  document.getElementById("table").innerHTML = text;
 };
 
 const showUpdate = (result, name) => {
